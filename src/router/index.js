@@ -11,6 +11,7 @@ import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
+import userComponentsRouter from '@/router/modules/userComponents'
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -185,6 +186,7 @@ export const asyncRoutes = [
   },
 
   /** when your routing map is too long, you can split it into small modules **/
+  userComponentsRouter,
   componentsRouter,
   chartsRouter,
   nestedRouter,
