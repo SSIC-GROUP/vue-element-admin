@@ -56,6 +56,24 @@ export function validAlphabets(str) {
 }
 
 /**
+ * @param {string} phone
+ * @returns {Boolean}
+ */
+export function validPhone(phone) {
+  const reg = /^1[3|4|5|6|7|8|9][0-9]\d{8}$/
+  return reg.test(phone)
+}
+
+/**
+ * @param {string} pwd
+ * @returns {Boolean}
+ */
+export function validPwd(pwd) {
+  const reg = /^(?![A-Za-z]+$)(?![A-Z\d]+$)(?![A-Z\W]+$)(?![a-z\d]+$)(?![a-z\W]+$)(?![\d\W]+$)\S{6,}$/
+  return reg.test(pwd)
+}
+
+/**
  * @param {string} email
  * @returns {Boolean}
  */
