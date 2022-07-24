@@ -6,36 +6,37 @@ const userComponentsRouter = {
   path: '/userComponents',
   component: Layout,
   redirect: 'noRedirect',
-  name: 'ComponentDemo',
+  name: 'ComponentUser',
   meta: {
-    title: 'Components',
+    title: 'UserComponents',
     icon: 'user'
   },
   children: [
     {
       path: 'user',
-      name: 'UserList',
-      component: () => import('@/views/userComponents/user/list'), // Parent router-view
-      meta: { title: 'User List', icon: 'list' },
+      name: 'User Manage',
+      component: { render(c) { return c('router-view') } }, // Parent router-view
+      // component: () => import('@/views/userComponents/user/list'), // Parent router-view
+      meta: { title: 'User Manage', icon: 'list' },
       redirect: '/userComponents/user/list',
       children: [
         {
           path: 'list',
           component: () => import('@/views/userComponents/user/list'),
-          name: 'UserList',
+          name: 'UserUserList',
           meta: { title: 'User List', icon: 'list' }
         },
         {
           path: 'create',
-          component: () => import('@/views/example/create'),
-          name: 'CreateArticle',
-          meta: { title: 'Create Article', icon: 'edit' }
+          component: () => import('@/views/userComponents/user/create'),
+          name: 'UserUserCreate',
+          meta: { title: 'Create User', icon: 'edit' }
         },
         {
           path: 'edit/:id(\\d+)',
-          component: () => import('@/views/example/edit'),
-          name: 'EditArticle',
-          meta: { title: 'Edit Article', noCache: true, activeMenu: '/example/list' },
+          component: () => import('@/views/userComponents/user/edit'),
+          name: 'UserUserEdit',
+          meta: { title: 'Edit User', noCache: true, activeMenu: '/userComponents/user/list' },
           hidden: true
         }
       ]

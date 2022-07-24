@@ -346,46 +346,6 @@ const asyncRoutes = [
   },
 
   {
-    path: '/userComponents',
-    component: 'layout/Layout',
-    redirect: '/userComponents/user/list',
-    name: 'Example',
-    meta: {
-      title: 'Example',
-      icon: 'example'
-    },
-    children: [
-      {
-        path: 'user',
-        component: 'views/userComponents/user/list',
-        name: 'UserList',
-        meta: { title: 'User List', icon: 'list' },
-        children: [
-          {
-            path: 'list',
-            component: 'views/userComponents/user/list',
-            name: 'UserList',
-            meta: { title: 'User List', icon: 'list' }
-          },
-          {
-            path: 'create',
-            component: 'views/example/create',
-            name: 'CreateArticle',
-            meta: { title: 'Create Article', icon: 'edit' }
-          },
-          {
-            path: 'edit/:id(\\d+)',
-            component: 'views/example/edit',
-            name: 'EditArticle',
-            meta: { title: 'Edit Article', noCache: true, activeMenu: '/example/list' },
-            hidden: true
-          }
-        ]
-      }
-    ]
-  },
-
-  {
     path: '/tab',
     component: 'layout/Layout',
     children: [
